@@ -1,0 +1,117 @@
+@import '../../styles/variables';
+
+.footer {
+  padding: 64px 24px;
+  background-color: #1d1c1e;
+
+  &__links {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 32px;
+    justify-items: center;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+    opacity: 0.1;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__location {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 40px;
+    color: #fff;
+    opacity: 0.5;
+
+    > ol {
+      > li {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        text-align: center;
+
+        &:first-of-type {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &__icons {
+    min-height: 2.4rem;
+  }
+}
+
+@media (min-width: $media-m) {
+  .footer {
+    padding: 80px 40px;
+
+    &__links {
+      margin-bottom: 31px;
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto;
+      gap: 0;
+      align-items: center;
+      justify-items: end;
+      padding-bottom: 41px;
+    }
+
+    &__line {
+      position: absolute;
+      bottom: 0;
+    }
+
+    &__info {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto;
+      gap: 10px;
+      align-items: end;
+      justify-items: start;
+    }
+
+    &__location {
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, 20.5rem);
+      justify-items: start;
+      gap: 31px 28px;
+      overflow-x: auto;
+
+      > ol {
+        &:last-of-type > li {
+          font-weight: 700;
+        }
+
+        > li {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-l) {
+  .footer {
+    padding: 72px 40px;
+
+    &__location {
+      gap: 31px 175px;
+    }
+  }
+}

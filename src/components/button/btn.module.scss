@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+
+.btn {
+  padding: 4px 4px 4px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 15.2rem;
+  max-width: 180px;
+  min-height: 56px;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  transition: color 0.2s, background-color 0.2s;
+
+  &--white {
+    color: #333136;
+    background-color: #fff;
+  }
+
+  &--orange {
+    color: #fff;
+    background-color: #e7816b;
+  }
+}
+
+button.btn {
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: $media-l) {
+  .btn {
+    &--white:hover {
+      color: #fff;
+      background-color: #ffad9b;
+    }
+
+    &--orange:hover {
+      background-color: #ffad9b;
+    }
+  }
+
+  button.btn {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

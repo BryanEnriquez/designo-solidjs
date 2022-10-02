@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: auto;
+  gap: 16px;
+  align-items: center;
+
+  > li {
+    > a {
+      position: relative;
+      display: block;
+      overflow: hidden;
+
+      > * {
+        display: block;
+      }
+
+      > span {
+        position: absolute;
+        top: 1000px;
+        left: 1000px;
+        width: 1px;
+        height: 1px;
+      }
+
+      > svg {
+        width: 2.4rem;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: $media-l) {
+  .socials {
+    > li {
+      > a {
+        > svg {
+          > path {
+            transition: fill 0.2s;
+          }
+
+          &:hover > path {
+            fill: #ffad9b;
+          }
+        }
+      }
+    }
+  }
+}

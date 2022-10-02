@@ -1,0 +1,82 @@
+@import '../../styles/variables';
+
+.links {
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 32px;
+
+  > li {
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    > a {
+      display: block;
+
+      &:link,
+      &:visited {
+        color: inherit;
+      }
+    }
+  }
+
+  &--f {
+    padding-left: 2px;
+
+    > li {
+      font-size: 1.4rem;
+      line-height: 1;
+
+      > a {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (min-width: $media-m) {
+  .links {
+    color: #333136;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto;
+    gap: 40px;
+
+    > li {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    &--f {
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: $media-l) {
+  .links {
+    > li > a {
+      padding-left: 2px;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+
+      &:hover,
+      &:active {
+        border-bottom: 1px solid #333136;
+      }
+    }
+
+    &--f {
+      > li > a {
+        &:hover,
+        &:active {
+          border-bottom: 1px solid #fff;
+        }
+      }
+    }
+  }
+}

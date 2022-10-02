@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.main {
+  position: relative;
+  margin-top: $header-height;
+}
+
+@media (min-width: $media-m) {
+  .main {
+    margin-top: 0;
+  }
+}
