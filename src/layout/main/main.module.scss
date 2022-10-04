@@ -3,10 +3,42 @@
 .main {
   position: relative;
   margin-top: $header-height;
+  overflow: hidden;
+
+  &__pageContent {
+    position: relative;
+    z-index: 4;
+  }
+
+  &__patternBox {
+    display: none;
+  }
 }
 
 @media (min-width: $media-m) {
   .main {
     margin-top: 0;
+  }
+}
+
+@media (min-width: $media-l) {
+  .main {
+    &__patternBox {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: calc(100% - 80px);
+      max-width: $max-width;
+      transform: translateX(-50%);
+
+      > div {
+        position: absolute;
+        width: 1006px;
+        height: 594px;
+        background-image: url('../../images/shared/desktop/bg-pattern-leaf.svg');
+      }
+    }
   }
 }

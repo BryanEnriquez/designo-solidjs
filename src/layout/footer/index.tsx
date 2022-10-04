@@ -3,6 +3,7 @@ import Logo from '../../components/logo';
 import NavLinks from '../../components/nav-links';
 import LocationInfo from '../../components/location-info';
 import SocialIcons from '../../components/social-icons';
+import PadContent from '../pad-content';
 import { mainOffice } from '../../copy/mainOffice';
 import style from './footer.module.scss';
 
@@ -45,24 +46,26 @@ const Footer = () => {
 
   return (
     <footer class={style.footer}>
-      <div class="mwr">
-        <div class={style.footer__links}>
-          <Logo color="light" />
-          <div class={style.footer__line} />
-          <NavLinks footer />
-        </div>
-        <div class={style.footer__info}>
-          <LocationInfo
-            class={style.footer__location}
-            office={mainOffice}
-            main
-          />
-          <div ref={iconsEl} class={style.footer__icons}>
-            <SocialIcons />
-            {/* {iconsAreVisible() && <SocialIcons />} */}
+      <PadContent>
+        <div class="mwr">
+          <div class={style.footer__links}>
+            <Logo color="light" />
+            <div class={style.footer__line} />
+            <NavLinks footer />
+          </div>
+          <div class={style.footer__info}>
+            <LocationInfo
+              class={style.footer__location}
+              office={mainOffice}
+              main
+            />
+            <div ref={iconsEl} class={style.footer__icons}>
+              <SocialIcons />
+              {/* {iconsAreVisible() && <SocialIcons />} */}
+            </div>
           </div>
         </div>
-      </div>
+      </PadContent>
     </footer>
   );
 };

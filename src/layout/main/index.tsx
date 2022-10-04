@@ -1,7 +1,8 @@
 import { Show } from 'solid-js';
 import { Outlet, useLocation } from '@solidjs/router';
-import style from './main.module.scss';
 import CTA from '../../components/cta';
+import { getPattern } from '../../data/pagePatterns';
+import style from './main.module.scss';
 
 const Main = () => {
   const location = useLocation();
@@ -10,7 +11,14 @@ const Main = () => {
 
   return (
     <main class={style.main}>
-      <Outlet />
+      <div class={style.main__pageContent}>
+        <Outlet />
+      </div>
+      <div class={style.main__patternBox}>
+        {getPattern(path()).map((el) => (
+          <div style={el} />
+        ))}
+      </div>
       <Show when={path() !== '/contact'}>
         <CTA />
       </Show>

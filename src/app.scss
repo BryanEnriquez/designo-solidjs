@@ -54,9 +54,19 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+}
+
 .mwr {
   margin: 0 auto;
   max-width: $max-width-s;
+}
+
+@media (min-width: 689px) {
+  .round-689 {
+    border-radius: 15px;
+  }
 }
 
 @media (min-width: $media-m) {

@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .footer {
-  padding: 64px 24px;
+  padding: 64px 0;
   background-color: #1d1c1e;
 
   &__links {
@@ -58,7 +58,7 @@
 
 @media (min-width: $media-m) {
   .footer {
-    padding: 80px 40px;
+    padding: 80px 0;
 
     &__links {
       margin-bottom: 31px;
@@ -108,7 +108,7 @@
 
 @media (min-width: $media-l) {
   .footer {
-    padding: 72px 40px;
+    padding: 72px 0;
 
     &__location {
       gap: 31px 175px;

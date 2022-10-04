@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.pad-mobile {
+  padding: 0 24px;
+}
+
+@media (min-width: $media-m) {
+  .pad-mobile,
+  .pad-tablet {
+    padding: 0 40px;
+  }
+}

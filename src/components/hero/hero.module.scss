@@ -1,0 +1,119 @@
+@import '../../styles/variables';
+
+.hero {
+  margin: 0 auto;
+  max-width: $max-width-s;
+  position: relative;
+  padding: 80px 24px 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 80px;
+  justify-items: center;
+  overflow: hidden;
+  background-color: #e7816b;
+
+  &__bg {
+    position: absolute;
+    width: 640px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &__copy {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    color: #fff;
+    z-index: 5;
+
+    > h1 {
+      max-width: 34rem;
+      font-weight: 500;
+      font-size: 3.2rem;
+      line-height: 3.6rem;
+    }
+
+    > p {
+      margin: 24px 0;
+      max-width: 41rem;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &__imgBox {
+    position: relative;
+    width: 100px;
+    height: 371px;
+    z-index: 4;
+
+    > img {
+      position: absolute;
+      left: 50%;
+      top: -170px;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (min-width: $media-m) {
+  .hero {
+    max-width: $max-width;
+    padding: 60px 58px 0 58px;
+    gap: 69px;
+
+    &__bg {
+      left: 170px;
+    }
+
+    &__copy {
+      > h1 {
+        max-width: 52rem;
+        font-size: 4.8rem;
+        line-height: 1;
+      }
+
+      > p {
+        margin: 29px 0 19px 0;
+        max-width: 44rem;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $media-l) {
+  .hero {
+    padding: 145px 96px 145px 95px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: start;
+    gap: 5px;
+
+    &__bg {
+      left: unset;
+      right: 0;
+    }
+
+    &__copy {
+      justify-items: start;
+      text-align: left;
+
+      > p {
+        margin: 32px 0 40px 0;
+      }
+    }
+
+    &__imgBox {
+      width: 284px;
+      height: 350px;
+      transform: translateY(-0.6rem);
+    }
+  }
+}
