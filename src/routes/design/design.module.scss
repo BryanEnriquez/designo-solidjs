@@ -1,0 +1,83 @@
+@import '../../styles/variables';
+
+.design {
+  padding-bottom: 96px;
+
+  &__hero {
+    position: relative;
+    margin: 0 auto;
+    max-width: $max-width-s;
+    padding: 105px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: #e7816b;
+    overflow: hidden;
+
+    > *:not(picture) {
+      position: relative;
+      z-index: 2;
+    }
+
+    > h1 {
+      text-transform: capitalize;
+      margin-bottom: 24px;
+    }
+
+    > p {
+      max-width: 32.7rem;
+    }
+
+    > picture > img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 876px;
+      pointer-events: none;
+    }
+  }
+}
+
+@media (min-width: $media-m) {
+  .design {
+    padding-bottom: 120px;
+
+    &__hero {
+      max-width: $max-width;
+      padding: 64px 58px;
+
+      > p {
+        max-width: 39rem;
+      }
+
+      > picture > img {
+        position: absolute;
+        top: 50%;
+        right: -167px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-l) {
+  .design {
+    padding-bottom: 160px;
+
+    &__hero {
+      &--web > picture > img {
+        right: 0;
+      }
+
+      &--app,
+      &--graphic {
+        > picture > img {
+          right: unset;
+          left: -58px;
+        }
+      }
+    }
+  }
+}

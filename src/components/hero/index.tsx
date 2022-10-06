@@ -9,8 +9,10 @@ const Hero = () => (
     <div class={`${style.hero} round-689`}>
       <img class={style.hero__bg} src={heroBg} alt="" />
       <div class={style.hero__copy}>
-        <h1>Award-winning custom designs and digital branding solutions</h1>
-        <p>
+        <h1 class="h">
+          Award-winning custom designs and digital branding solutions
+        </h1>
+        <p class="p">
           With over 10 years in the industry, we are experienced in creating
           fully responsive websites, app design, and engaging brand experiences.
           Find out more about our services.

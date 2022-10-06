@@ -45,6 +45,18 @@ body {
   background-color: #fff;
 }
 
+.h {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+}
+
+.p {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
 ol,
 ul {
   list-style: none;
@@ -72,5 +84,19 @@ img {
 @media (min-width: $media-m) {
   .mwr {
     max-width: $max-width;
+  }
+
+  .h {
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+
+    &--2 {
+      font-size: 4rem;
+    }
+  }
+
+  .p {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
   }
 }
