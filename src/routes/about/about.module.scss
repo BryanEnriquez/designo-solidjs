@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.about {
+  padding-bottom: 120px;
+}
+
+@media (min-width: $media-l) {
+  .about {
+    padding-bottom: 160px;
+  }
+}

@@ -1,0 +1,155 @@
+@import '../../styles/variables';
+
+.hero {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $max-width-s;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  background-color: #e7816b;
+  overflow: hidden;
+
+  &__img {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+
+    > picture > img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__copy {
+    position: relative;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+
+    > *:not(picture) {
+      position: relative;
+      z-index: 2;
+    }
+
+    > h1 {
+      margin-bottom: 24px;
+    }
+
+    > p {
+      max-width: 56rem;
+    }
+
+    > picture > img {
+      position: absolute;
+      width: 876px;
+      height: 946px;
+      top: -140px;
+      right: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .hero {
+    &__img {
+      & > picture > img {
+        top: 50%;
+        left: 0;
+        height: auto;
+        width: 100%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .hero {
+    &__img {
+      & > picture > img {
+        left: 50%;
+        height: 101%;
+        width: auto;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-m) {
+  .hero {
+    max-width: $max-width;
+
+    &__img {
+      & > picture > img {
+        height: auto;
+        width: 101%;
+      }
+    }
+
+    &__copy {
+      padding: 64px 58px;
+
+      > h1 {
+        margin-bottom: 32px;
+      }
+
+      > p {
+        max-width: 57.3rem;
+      }
+
+      > picture > img {
+        width: 640px;
+        height: 640px;
+        top: -430px;
+        right: unset;
+        left: -121px;
+      }
+    }
+  }
+}
+
+@media (min-width: 950px) {
+  .hero {
+    min-height: 480px;
+    grid-template-columns: 1fr 42.84%;
+    grid-template-rows: auto;
+
+    &__img {
+      height: 100%;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+
+      > picture > img {
+        height: 100%;
+        width: auto;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__copy {
+      padding: 24px 82px 24px 95px;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left;
+
+      > picture > img {
+        top: unset;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

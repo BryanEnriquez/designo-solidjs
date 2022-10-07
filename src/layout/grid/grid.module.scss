@@ -14,9 +14,16 @@
   }
 }
 
+@media (min-width: 689px) {
+  .grid {
+    &--0 {
+      gap: 120px;
+    }
+  }
+}
+
 @media (min-width: $media-m) {
   .grid {
-    &--0,
     &--96 {
       gap: 120px;
     }
