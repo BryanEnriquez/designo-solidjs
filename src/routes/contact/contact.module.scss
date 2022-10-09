@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.contact {
+  padding-bottom: 120px;
+}
+
+@media (min-width: $media-l) {
+  .contact {
+    padding-bottom: 160px;
+  }
+}
