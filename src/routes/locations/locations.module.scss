@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.locations {
+  padding-bottom: 120px;
+}
+
+@media (min-width: $media-l) {
+  .locations {
+    padding-bottom: 160px;
+  }
+}

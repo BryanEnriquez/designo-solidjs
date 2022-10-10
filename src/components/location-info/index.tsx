@@ -9,7 +9,7 @@ type Props = {
 
 const LocationInfo = (props: Props) => (
   <div {...(props.class && { class: props.class })}>
-    {props.withCountry && <label>{props.office.country}</label>}
+    {props.withCountry && <span>{props.office.country}</span>}
     <ol>
       {props.office.address.map((el) => (
         <li>{el}</li>
