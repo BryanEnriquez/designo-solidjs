@@ -1,5 +1,4 @@
-import { createSignal, onCleanup, onMount } from 'solid-js';
-import Map from '../map';
+import { createSignal, onCleanup, onMount, lazy } from 'solid-js';
 import LocationInfo from '../../components/location-info';
 import Picture from '../../components/picture';
 import { mainOffice } from '../../copy/mainOffice';
@@ -7,6 +6,8 @@ import { offices } from '../../copy/otherOffices';
 import threeCircles from '../../images/locations/mobile/three-circles.svg';
 import twoCircles from '../../images/shared/desktop/bg-pattern-two-circles.svg';
 import style from './maps.module.scss';
+
+const Map = lazy(() => import('../map'));
 
 const locations = [mainOffice, ...offices];
 const bgImages = [threeCircles, twoCircles, twoCircles];

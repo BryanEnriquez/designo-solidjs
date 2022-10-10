@@ -4,6 +4,7 @@ import NavLinks from '../../components/nav-links';
 import Logo from '../../components/logo';
 import iconClose from '../../images/shared/mobile/icon-close.svg';
 import iconOpen from '../../images/shared/mobile/icon-hamburger.svg';
+import Modal from '../../components/modal';
 import style from './header.module.scss';
 
 const Header = () => {
@@ -14,6 +15,8 @@ const Header = () => {
   createEffect(() => {
     if (location.pathname) setShowMenu(false);
   });
+
+  const onExit = () => setShowMenu(false);
 
   return (
     <header class={style.header}>
@@ -45,6 +48,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {showMenu() && <Modal onExit={onExit} />}
     </header>
   );
 };

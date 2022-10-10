@@ -1,48 +1,41 @@
-// import { createSignal, onMount, lazy, onCleanup } from 'solid-js';
+import { createSignal, onMount, lazy, onCleanup } from 'solid-js';
 import Logo from '../../components/logo';
 import NavLinks from '../../components/nav-links';
 import LocationInfo from '../../components/location-info';
-import SocialIcons from '../../components/social-icons';
 import PadContent from '../pad-content';
 import { mainOffice } from '../../copy/mainOffice';
 import style from './footer.module.scss';
 
-// const SocialIcons = lazy(() => import('../social-icons'));
+const SocialIcons = lazy(() => import('../../components/social-icons'));
 
 const Footer = () => {
-  // const [iconsAreVisible, setIconAreVisible] = createSignal(false);
-  // const [observer, setObserver] = createSignal<IntersectionObserver>();
+  const [iconsAreVisible, setIconAreVisible] = createSignal(false);
   let iconsEl: HTMLDivElement | undefined;
 
-  // onMount(() => {
-  //   if (!iconsEl) return;
+  onMount(() => {
+    if (!iconsEl) return;
 
-  //   const observerInstance = new IntersectionObserver(
-  //     (entries, observer) => {
-  //       const [entry] = entries;
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        const [entry] = entries;
 
-  //       if (!entry.isIntersecting) return;
+        if (!entry.isIntersecting) return;
 
-  //       setIconAreVisible(true);
+        setIconAreVisible(true);
 
-  //       observer.unobserve(entry.target);
-  //     },
-  //     {
-  //       root: null,
-  //       rootMargin: '10px',
-  //       threshold: 0.1,
-  //     }
-  //   );
+        observer.unobserve(entry.target);
+      },
+      {
+        root: null,
+        rootMargin: '10px',
+        threshold: 0.1,
+      }
+    );
 
-  //   observerInstance.observe(iconsEl);
+    observer.observe(iconsEl);
 
-  //   setObserver(observerInstance);
-  // });
-
-  // onCleanup(() => {
-  //   const instance = observer();
-  //   if (instance) instance.disconnect();
-  // });
+    onCleanup(() => observer.disconnect());
+  });
 
   return (
     <footer class={style.footer}>
@@ -60,8 +53,7 @@ const Footer = () => {
               main
             />
             <div ref={iconsEl} class={style.footer__icons}>
-              <SocialIcons />
-              {/* {iconsAreVisible() && <SocialIcons />} */}
+              {iconsAreVisible() && <SocialIcons />}
             </div>
           </div>
         </div>

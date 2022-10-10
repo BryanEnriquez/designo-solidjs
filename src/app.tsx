@@ -7,6 +7,7 @@ import Design from './routes/design';
 import About from './routes/about';
 import Locations from './routes/locations';
 import Contact from './routes/contact';
+import NotFound from './routes/not-found';
 import './app.scss';
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
           <Route path="about" component={About} />
           <Route path="locations" component={Locations} />
           <Route path="contact" component={Contact} />
-          <Route path="*" element={<div>Not found</div>} />
+          <Route path="*" element={NotFound} />
         </Route>
       </Routes>
       <Footer />
