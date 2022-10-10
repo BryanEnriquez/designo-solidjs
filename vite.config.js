@@ -6,5 +6,8 @@ export default defineConfig({
   server: {
     port: 3001,
   },
+  build: {
+    target: 'es2015',
+  },
   envDir: './env',
 });
