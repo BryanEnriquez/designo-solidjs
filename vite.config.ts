@@ -8,6 +8,7 @@ export default defineConfig({
   },
   build: {
     target: 'es2015',
+    assetsInlineLimit: 2048,
   },
   envDir: './env',
 });
